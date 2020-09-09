@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
+import TweetArea from './Components/TweetArea';
+import Tweetshow from './Components/Tweetshow';
 
-function App() {
+function App() 
+{
+	  const [tweet,setTweets]=useState([]);
+ function addtweet(newvalue)
+  {
+    setTweets(prevState => [...prevState,newvalue]);
+    console.log(tweet);
+    setTimeout(()=>{
+             setTweets([]);
+             },60000);
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+    <div className="myHeader">
+     <center><h1>Task by Board Infinity by 1705041</h1></center>
+      <center><h2>Tweet your Views </h2></center>
+      <center><h3>(Tweets disappears after 1 minutes)</h3></center>
+          </div>
+           <Tweetshow tweets={tweet} />
+           <TweetArea onChange={addtweet}/>
+           <h1><p className="myHeader" align="center">Submitted by :
+                           Konderu Hrishikesh
+                           1705041 </p></h1>
     </div>
   );
 }

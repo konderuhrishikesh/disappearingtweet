@@ -1,0 +1,13 @@
+.tweetcard{
+  background-color:orange;
+  height:auto;
+  width:auto;
+  padding: 2em 2em;
+  color:solid black;
+  font-size: 8px;
+  border-radius:2rem;
+  border:2px solid black;
+  margin-left:500px;
+  margin-right:500px;
+  margin-top: 20px;;
+}
